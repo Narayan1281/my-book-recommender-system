@@ -1,6 +1,5 @@
-book-recommender-sytem_CollabrativeFilteringBased.ipynb
-book-recommender-sytem_PopularityBased.ipynb
-book-recommender.py
+*.ipynb
+*.pyc
 github_ssh
 Books.csv
 Ratings.csv
