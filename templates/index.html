@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="navigationBar">
+        <nav>
+            <ul>
+                <li class="brand">My Book Recommender</li>
+                <!-- <div id="home"><a href="/">Home</a></div>
+                <div id="home"><a href="/recommend">Get Recommendation</a></div>
+                <div id="home"> <a href="#">About</a></div> -->
+                <div class="home a" >Home</div>
+                <div class="home b" >Get Recommendation</div>
+                <div class="home c" > About</div>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="bookList">
+            <hr style="width:50%;text-align:center">
+            <h1 id="heading" style="text-align: center; color: brown;"> Top 50 Popular Books</h1>
+            <hr>
+            <div class="bookItemContainer">
+                {% for i in range(book_name|length) %}
+                <div class="bookItem">
+                    <img src="{{image[i]}}" alt="cover image">
+                    <div class="bookName" >{{book_name[i]}}</div>
+                    <div class="author">Author - {{author[i]}}</div>
+                    <div class="votes">Votes - {{votes[i]}}</div>
+                    <div class="ratings">Rating - {{rating[i]}}</div>
+                    <br>
+                </div>
+                <!-- <br> -->
+                {% endfor %}
+            </div>
+            
+            
+            
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='styles/index.js')}}"></script>
+</body>
+</html>

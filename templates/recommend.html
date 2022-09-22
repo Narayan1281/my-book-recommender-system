@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+</head>
+<body>
+    <div class="navigationBar">
+        <nav>
+            <ul>
+                <li class="brand">My Book Recommender</li>
+                <div class="home a" style="color: gray;">Home</div>
+                <div class="home b" style="color: white;">Get Recommendation</div>
+                <div class="home c" style="color: gray;"> About</div>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ------------- If The user input book-title is not present in our database ------------- -->
+
+    {% if not_found == 1 %}
+    <div>
+        <script>
+            alert("The Book-Title {{book_name}} is not in our database!")
+        </script>
+        <h2 id="heading" style="text-align: center; color: whitesmoke;"> Try Again with Another Book Title</h2>
+     </div>
+    {% endif %}
+
+
+    <div class="recommended">
+
+            {% if argument == 0  %}
+            <div class="container-rec">
+                <div class="interface">
+                    <h1> Get the Most Suitable Recommendations</h1>
+                    <form action="/recommend_books" method="post">
+                        <input type="text" name="user_input" id="form-control" placeholder="Enter a Book Name" list="book_title"> 
+                        <datalist id="book_title">
+                        {% for i in range(book_title|length) %}
+                            <option value="{{book_title[i]}}">
+                        {% endfor %}
+                        </datalist>
+                        <br>
+                        <input type="submit" value="Submit" id="btn1">
+                    </form>
+                </div>
+            </div> 
+            {% endif %}
+
+<!-- --------------------------- Code to show recommendation to the user if any -------------------------------- -->
+    
+        {% if data %}    
+        <div class="combine">
+            <div class="container-rec">
+                <div class="interface">
+                    <h1> Get the Most Suitable Recommendations</h1>
+                    <form action="/recommend_books" method="post">
+                        <input type="text" name="user_input" id="form-control" placeholder="Enter a Book Name" list="book_title"> 
+                        <datalist id="book_title">
+                        {% for i in range(book_title|length) %}
+                            <option value="{{book_title[i]}}">
+                        {% endfor %}
+                        </datalist>
+                        <br>
+                        <input type="submit" value="Submit" id="btn1">
+                    </form>
+                </div>
+            </div> 
+
+            <p><br></p>
+            <div class="books_align">
+                <div class="bookItemContainer">
+                    {% for i in data %}
+                    <div class="bookItem">
+                        <img src="{{i[2]}}" alt="cover image">
+                        <div class="bookName" >{{i[0]}}</div>
+                        <div class="author">Author - {{i[1]}}</div>
+                        <br>
+                    </div>
+                    {% endfor %}
+                </div> 
+            </div>
+            
+        </div>
+        
+    </div>
+    {% endif %}
+
+ <!-- ------------- If The user input book-title is not present in our database ------------- -->
+
+    {% if not_found == 1 %}
+   <script>
+        document.body.style.backgroundColor = "#AA0000";
+   </script>
+    {% endif %}
+
+<!-- ------------------------------ About Page -------------------------------------- -->
+   {% if about == 1 %}
+   <script>
+        // alert("Hello\nHow are you?");
+        let mytag = document.getElementsByClassName("home")
+        
+        mytag[2].style.color = "white";
+        mytag[1].style.color = "gray";
+
+        let conclude = document.getElementsByClassName("recommended")
+        conclude[0].innerHTML = `<div>
+        <h1 style="color:Tomato; text-align: center; text-decoration-line: underline;">Conclusion</h1>
+        <p> <strong>My-Book-Recommender-System</strong> is a Machine Learning based project. Two models have been implemented in this project
+            namely :
+            <ol>
+                <li>Popularity based and</li>
+                <li>Collaborative Filtering based recommender system.</li>
+            </ol>
+           <strong>Cosine Similarity</strong> has been used as a measure to identify similarity between two books based on the
+           user ratings. Since the "pivot table" has may entries as null values, cosine similarity gives more appropriate
+           result.
+        </p>
+        <p>
+            The books which got more than 50 ratings and the users who have rated more than 200 books (experienced users) are taken into consideration during
+           model building.
+        </p>
+        <ul>
+            <li><p> <em> The source code of this project can be found at my <a href="https://github.com/Narayan1281/my-book-recommender-system"> github </a> repository. </em></p></li>
+            <li><p>
+                <em>The major part of this project is inspired from this youtube <a href="https://youtu.be/1YoD0fg3_EM">video</a> by campusx-official.</em>
+            </p></li>
+        </ul>
+        <h3 style="border:2px solid violet; padding:4px;">
+            I am feeling happy and cheerful after completing this task. It was a great learning experience!
+        </h3>
+    </div>`;
+   </script>
+   {% endif %}
+
+    <script src="{{url_for('static', filename='styles/index.js')}}"></script>
+</body>
+</html>

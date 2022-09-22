@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+body{
+    background-color: rgb(19, 106, 236);
+}
+
+/* .navigationBar{
+    position:static;
+} */
+
+nav{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2rem;
+    /* position: sticky; */
+}
+
+nav ul{
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+
+nav ul li{
+    padding: 0 14px;
+}
+
+.brand {
+    display: flex;
+    color: gold;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+.container{
+    min-height: 100vh;
+    background-color: #fffafa;
+    color: black;
+    font-family: 'Varela Round', sans-serif;
+    font-size: medium;
+    display: flex;
+    margin: 10px auto;
+    width: 65%;
+    padding: 20px 50px;
+    border-radius: 12px;
+}
+
+/* #heading{
+    text-decoration: underline overline;
+    margin: 10px 10px;
+} */
+
+.bookItem{
+    /* height: 45px; */
+    /* display: flex; */
+    /* background-color: white; */
+    /* color: black; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* margin: 12px 0; */
+    width:190px; /* or whatever width you want. */
+    /* max-width:250px; or whatever width you want. */
+    /* height: 300px; */
+    display: inline-block;
+    padding: 0 60px;
+}
+
+.bookName{
+    display: flexbox;
+    /* max-width:220px; */
+    word-wrap:break-word;
+}
+.home{
+    
+    align-items: center;
+    height: 60px;   
+    cursor: pointer;
+    padding: 0 10px;
+    margin-left: 15px;   
+    display: flex;
+}
+.b{
+    color: gray;
+}
+.c{
+    color: gray;
+}
+
+/* ------------------ Recommend.html styling -------------------- */
+
+.recommended{
+    
+    min-height: 50vh;
+    background-color: #fffafa;
+    color: black;
+    font-family: 'Varela Round', sans-serif;
+    font-size: medium;
+    display: flex;
+    margin:  0 auto;
+    width: 68%;
+    padding: 20px 50px;
+    border-radius: 12px;
+}
+.combine{
+    vertical-align: top;
+}
+
+.container-rec{
+    display: flex;
+    /* width: 68%; */
+    margin: 0 10%;
+}
+
+/* .books_align{
+    margin: 0 auto;
+    
+} */
+
+#form-control{
+    box-sizing: border-box;
+    width: 100%;
+    /* margin: 10px 0; */
+    padding: 10px;
+    border-radius: 8px;
+    /* text-align: center; */
+}
+
+#btn1{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 72px;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+}
