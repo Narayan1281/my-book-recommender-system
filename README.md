@@ -15,7 +15,7 @@
            model building.
         </p>
         <ul>
-            <li><p> <em> The source code of this project can be found at my <a href="https://github.com/Narayan1281/my-book-recommender-system"> github </a> repository. </em></p></li>
+            <li><p> <em> The project is hosted on <a href="https://book-rec-sys-python.herokuapp.com/"> heroku </a>. </em></p></li>
             <li> <em>This <a href="https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset"> dataset</a> from kaggle is used for model building. </em></li>
            <li><p>
                 <em>The major part of this project is inspired from this youtube <a href="https://youtu.be/1YoD0fg3_EM">video</a> by campusx-official.</em>
