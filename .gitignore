@@ -1,8 +1,6 @@
-*.ipynb
 *.pyc
 github_ssh
 Books.csv
 Ratings.csv
 Users.csv
-README.md
 myvenv/
